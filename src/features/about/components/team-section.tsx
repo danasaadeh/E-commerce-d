@@ -1,5 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import man from "@/assets/images/about/team/man.png";
+import man2 from "@/assets/images/about/team/man2.png";
+import woman from "@/assets/images/about/team/woman.png";
+
 import {
   faTwitter,
   faInstagram,

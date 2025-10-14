@@ -1,6 +1,9 @@
 import type React from "react";
 import { Link } from "react-router-dom";
 import { Send } from "@mui/icons-material";
+import qr from "@/assets/images/footer/qr.jpg";
+import googlePlay from "@/assets/images/footer/google_play.png";
+import appStore from "@/assets/images/footer/app_store.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -117,7 +120,7 @@ const Footer: React.FC = () => {
             <div className="flex items-start gap-2 mb-6">
               <div className="flex-shrink-0">
                 <img
-                  src="/E-commerce-d/src/assets/images/footer/qr.jpg"
+                  src={qr}
                   alt="qr code"
                   className="w-20 h-20 object-cover rounded border border-gray-700"
                 />
@@ -125,14 +128,14 @@ const Footer: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <a href="#" className="inline-block">
                   <img
-                    src="/E-commerce-d/src/assets/icons/GooglePlay.svg"
+                    src={googlePlay}
                     alt="Google Play"
                     className="h-9 object-contain"
                   />
                 </a>
                 <a href="#" className="inline-block">
                   <img
-                    src="/E-commerce-d/src/assets/icons/AppStore.svg"
+                    src={appStore}
                     alt="App Store"
                     className="h-9 object-contain"
                   />
