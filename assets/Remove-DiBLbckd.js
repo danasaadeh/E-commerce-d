@@ -1,1 +1,0 @@
-import{Mt as e,et as t,xt as n}from"./index-MqxR6K1Q.js";var r=e(n()),i=t((0,r.jsx)(`path`,{d:`M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z`}),`Add`),a=t((0,r.jsx)(`path`,{d:`M19 13H5v-2h14z`}),`Remove`);export{i as n,a as t};
