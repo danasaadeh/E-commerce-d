@@ -1,0 +1,57 @@
+.search-dialog {
+  background: #f3f4f6 !important; /* ✅ fixed solid background */
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: none !important; /* ✅ remove glass effect */
+}
+
+/* Content text color */
+.search-dialog-content {
+  color: #222;
+  background-color: #f3f4f6 !important;
+}
+
+/* Input Field */
+.search-textfield {
+  background: #fff !important;
+  border-radius: 30px !important;
+  color: #333 !important;
+}
+
+.search-textfield .MuiOutlinedInput-root {
+  color: #333 !important;
+}
+
+/* Suggestions */
+.search-suggestion {
+  color: #333;
+}
+
+.search-suggestion:hover {
+  background-color: #f3f4f6;
+}
+
+/* Empty results text */
+.search-no-results {
+  color: #666;
+}
+/* ✅ Change border color of the input on focus */
+.search-textfield
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #db4444 !important;
+}
+
+/* Optional: keep consistent border color on hover too */
+.search-textfield
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #db4444 !important;
+}
+
+/* Default border (unfocused) */
+.search-textfield .MuiOutlinedInput-notchedOutline {
+  border-color: #ddd !important;
+}
