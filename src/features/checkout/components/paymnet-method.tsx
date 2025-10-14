@@ -1,4 +1,8 @@
 import { Box, Radio, RadioGroup, FormControlLabel } from "@mui/material";
+import bkash from "@/assets/images/checkout/bkash.png";
+import visa from "@/assets/images/checkout/visa.png";
+import master from "@/assets/images/checkout/master_card.png";
+import orange from "@/assets/images/checkout/orange.png";
 
 const PaymentMethod = () => {
   return (
@@ -12,26 +16,10 @@ const PaymentMethod = () => {
             className="m-0"
           />
           <Box className="flex items-center gap-2">
-            <img
-              src="src/assets/images/checkout/bkash.png"
-              alt="Visa"
-              className="h-6"
-            />
-            <img
-              src="src/assets/images/checkout/visa.png"
-              alt="Visa"
-              className="h-6"
-            />
-            <img
-              src="/src/assets/images/checkout/master_card.png"
-              alt="Mastercard"
-              className="h-6"
-            />
-            <img
-              src="/src/assets/images/checkout/orange.png"
-              alt="PayPal"
-              className="h-6"
-            />
+            <img src={bkash} alt="Visa" className="h-6" />
+            <img src={visa} alt="Visa" className="h-6" />
+            <img src={master} alt="Mastercard" className="h-6" />
+            <img src={orange} alt="PayPal" className="h-6" />
           </Box>
         </Box>
 

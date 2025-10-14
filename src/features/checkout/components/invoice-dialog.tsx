@@ -35,7 +35,7 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
 
   const handlePrint = () => window.print();
 
-  // 🛑 If no billing info, don’t render anything yet
+  // 🛑 Don't render if no billing info yet
   if (!billingInfo) return null;
 
   return (
@@ -45,7 +45,30 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
       fullScreen={isMobile}
       maxWidth="md"
       fullWidth
+      // ✅ Portal fixes: ensures MUI renders above everything else
+      container={document.body}
+      disablePortal={false}
+      // ✅ Visibility fixes
+      sx={{ zIndex: 9999 }}
+      PaperProps={{
+        sx: {
+          backgroundColor: "#fff",
+          color: "#000",
+          zIndex: 10000,
+          borderRadius: 2,
+          boxShadow: 6,
+          overflow: "hidden",
+          position: "relative",
+        },
+      }}
+      BackdropProps={{
+        sx: {
+          backgroundColor: "rgba(0, 0, 0, 0.75)", // darker and consistent
+          zIndex: 9998,
+        },
+      }}
     >
+      {/* 🔴 Title */}
       <DialogTitle
         sx={{
           textAlign: "center",
@@ -58,8 +81,9 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
         E-Commerce Invoice
       </DialogTitle>
 
+      {/* 📜 Content */}
       <DialogContent sx={{ p: isMobile ? 2 : 4 }}>
-        {/* Header */}
+        {/* Header Info */}
         <Box
           display="flex"
           justifyContent="space-between"
@@ -118,7 +142,7 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
 
         <Divider sx={{ mb: 2 }} />
 
-        {/* Product List */}
+        {/* 🛍️ Product List */}
         <Box>
           <Typography variant="h6" gutterBottom>
             Summary
@@ -133,17 +157,23 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
               <Typography>Price</Typography>
             </Box>
 
-            {items.map((item) => (
-              <Box
-                key={item.id}
-                className="flex justify-between px-3 py-2 border-t border-gray-100"
-              >
-                <Typography variant="body2">{item.name}</Typography>
-                <Typography variant="body2">
-                  ${item.price.toFixed(2)}
-                </Typography>
+            {items.length > 0 ? (
+              items.map((item) => (
+                <Box
+                  key={item.id}
+                  className="flex justify-between px-3 py-2 border-t border-gray-100"
+                >
+                  <Typography variant="body2">{item.name}</Typography>
+                  <Typography variant="body2">
+                    ${item.price.toFixed(2)}
+                  </Typography>
+                </Box>
+              ))
+            ) : (
+              <Box className="px-3 py-2 text-gray-500 text-sm">
+                No products in cart
               </Box>
-            ))}
+            )}
 
             <Divider />
 
@@ -166,6 +196,7 @@ const InvoiceDialog: React.FC<InvoiceDialogProps> = ({
         </Box>
       </DialogContent>
 
+      {/* Footer Actions */}
       <DialogActions sx={{ justifyContent: "center", pb: 2 }}>
         <Button variant="outlined" onClick={onClose}>
           Close
