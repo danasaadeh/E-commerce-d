@@ -18,22 +18,22 @@ const team = [
   {
     name: "Tom Cruise",
     role: "Founder & Chairman",
-    img: "/E-commerce-d/src/assets/images/about/team/man.png",
+    img: man,
   },
   {
     name: "Emma Watson",
     role: "Managing Director",
-    img: "/E-commerce-d/src/assets/images/about/team/woman.png",
+    img: woman,
   },
   {
     name: "Will Smith",
     role: "Product Designer",
-    img: "/E-commerce-d/src/assets/images/about/team/man2.png",
+    img: man2,
   },
   {
     name: "Chris Evans",
     role: "Marketing Lead",
-    img: "/E-commerce-d/src/assets/images/about/team/man.png",
+    img: man,
   },
 ];
 
