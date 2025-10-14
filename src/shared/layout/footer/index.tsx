@@ -2,8 +2,8 @@ import type React from "react";
 import { Link } from "react-router-dom";
 import { Send } from "@mui/icons-material";
 import qr from "@/assets/images/footer/qr.jpg";
-import googlePlay from "@/assets/images/footer/google_play.png";
-import appStore from "@/assets/images/footer/app_store.png";
+import googlePlay from "@/assets/icons/GooglePlay.svg";
+import appStore from "@/assets/icons/AppStore.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
