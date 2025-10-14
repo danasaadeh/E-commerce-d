@@ -1,0 +1,1 @@
+import{Mt as e,et as t,xt as n}from"./index-DKn9Tmv1.js";var r=e(n()),i=t((0,r.jsx)(`path`,{d:`M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z`}),`NavigateNext`);export{i as t};
