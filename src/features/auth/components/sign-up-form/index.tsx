@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import loginImage from "@/assets/images/auth/login.jpg";
 import {
   TextField,
   Button,
@@ -87,7 +88,7 @@ const SignupForm: React.FC = () => {
         {!isMobile && (
           <div className="flex justify-center items-center bg-[#CBE4E8] min-h-[600px] md:min-h-screen">
             <img
-              src="/src/assets/images/auth/login.jpg"
+              src="/E-commerce-d/src/assets/images/auth/login.jpg"
               alt="Shopping illustration"
               className="w-full h-full object-cover"
             />

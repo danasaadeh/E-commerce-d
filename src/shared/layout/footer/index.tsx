@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
             <div className="flex items-start gap-2 mb-6">
               <div className="flex-shrink-0">
                 <img
-                  src="src/assets/images/footer/qr.jpg"
+                  src="/E-commerce-d/src/assets/images/footer/qr.jpg"
                   alt="qr code"
                   className="w-20 h-20 object-cover rounded border border-gray-700"
                 />
@@ -125,14 +125,14 @@ const Footer: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <a href="#" className="inline-block">
                   <img
-                    src="src/assets/icons/GooglePlay.svg"
+                    src="/E-commerce-d/src/assets/icons/GooglePlay.svg"
                     alt="Google Play"
                     className="h-9 object-contain"
                   />
                 </a>
                 <a href="#" className="inline-block">
                   <img
-                    src="src/assets/icons/AppStore.svg"
+                    src="/E-commerce-d/src/assets/icons/AppStore.svg"
                     alt="App Store"
                     className="h-9 object-contain"
                   />
