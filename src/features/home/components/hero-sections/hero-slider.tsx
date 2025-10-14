@@ -5,6 +5,8 @@ import { Box, Typography } from "@mui/material";
 import { ArrowRightAlt } from "@mui/icons-material";
 import "swiper/css";
 import "swiper/css/pagination";
+import Iphone from "@/assets/images/home/hero-sections/iphone_hero.jpg";
+import apple from "@/assets/images/home/apple.png";
 
 const slides = [
   {
@@ -12,35 +14,35 @@ const slides = [
     title: "iPhone 14 Series",
     subtitle: "Up to 10% off Voucher",
     bgColor: "bg-black",
-    imgSrc: "src/assets/images/home/hero-sections/iphone_hero.jpg",
+    imgSrc: Iphone,
   },
   {
     id: 2,
     title: "iPhone 14 Pro Max",
     subtitle: "Up to 15% off Voucher",
     bgColor: "bg-black",
-    imgSrc: "src/assets/images/home/hero-sections/iphone_hero.jpg",
+    imgSrc: Iphone,
   },
   {
     id: 3,
     title: "iPhone 14 Plus",
     subtitle: "Up to 12% off Voucher",
     bgColor: "bg-black",
-    imgSrc: "src/assets/images/home/hero-sections/iphone_hero.jpg",
+    imgSrc: Iphone,
   },
   {
     id: 4,
     title: "iPhone 14 Plus",
     subtitle: "Up to 20% off Voucher",
     bgColor: "bg-black",
-    imgSrc: "src/assets/images/home/hero-sections/iphone_hero.jpg",
+    imgSrc: Iphone,
   },
   {
     id: 3,
     title: "iPhone 14 Plus",
     subtitle: "Up to 25% off Voucher",
     bgColor: "bg-black",
-    imgSrc: "src/assets/images/home/hero-sections/iphone_hero.jpg",
+    imgSrc: Iphone,
   },
 ];
 
@@ -88,11 +90,7 @@ const HeroSlider: React.FC = () => {
                   className="text-gray-300 flex items-center gap-2"
                   sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
                 >
-                  <img
-                    src="src/assets/images/home/apple.png"
-                    alt="Apple"
-                    className="h-8 w-8"
-                  />
+                  <img src={apple} alt="Apple" className="h-8 w-8" />
                   {slide.title}
                 </Typography>
                 <Typography
@@ -123,11 +121,7 @@ const HeroSlider: React.FC = () => {
               {/* Right Image */}
               <Box className="flex-shrink-0 h-full flex items-center justify-center max-w-[50%]">
                 <img
-                  src={
-                    slide.imgSrc ||
-                    "src/assets/images/home/placeholder-iphone.png" ||
-                    "/placeholder.svg"
-                  }
+                  src={slide.imgSrc || Iphone || "/placeholder.svg"}
                   alt={slide.title}
                   className="object-contain w-full h-full max-h-[280px] lg:max-h-[350px]"
                 />

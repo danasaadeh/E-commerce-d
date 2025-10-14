@@ -15,6 +15,7 @@ import { useTheme } from "@mui/material/styles";
 import { useLoginMutation } from "../../services/mutations";
 import { loginFormSchemaValidation } from "./config";
 import { appRoutes } from "@/routes";
+import loginImage from "@/assets/images/auth/login.jpg";
 
 interface LoginFormData {
   email: string;
@@ -91,7 +92,7 @@ const LoginForm: React.FC = () => {
         {!isMobile && (
           <div className="flex justify-center items-center bg-[#CBE4E8] min-h-[600px] md:min-h-screen">
             <img
-              src="/E-commerce-d/src/assets/images/auth/login.jpg"
+              src={loginImage}
               alt="Login illustration"
               className="w-full h-full object-cover"
             />

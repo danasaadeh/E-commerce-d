@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import loginImage from "@/assets/images/auth/login.jpg";
+import Google from "/src/assets/icons/Google.svg";
 import {
   TextField,
   Button,
@@ -88,7 +89,7 @@ const SignupForm: React.FC = () => {
         {!isMobile && (
           <div className="flex justify-center items-center bg-[#CBE4E8] min-h-[600px] md:min-h-screen">
             <img
-              src="/E-commerce-d/src/assets/images/auth/login.jpg"
+              src={loginImage}
               alt="Shopping illustration"
               className="w-full h-full object-cover"
             />
@@ -183,11 +184,7 @@ const SignupForm: React.FC = () => {
                 fullWidth
                 variant="outlined"
                 startIcon={
-                  <img
-                    src="/src/assets/icons/Google.svg"
-                    alt="Google"
-                    className="w-6 h-6"
-                  />
+                  <img src={Google} alt="Google" className="w-6 h-6" />
                 }
                 sx={{
                   textTransform: "none",
