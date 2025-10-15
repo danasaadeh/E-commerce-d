@@ -10,65 +10,66 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Hide snackbars while invoice is open */
-.MuiDialog-root[role="presentation"] ~ .MuiSnackbar-root {
-  display: none !important;
+/* === 1️⃣ Global white background for all normal dialogs === */
+.MuiDialog-paper:not(.logout-dialog) {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* ✅ Fix for dialog overlay visibility */
-.MuiDialog-root {
-  z-index: 1500 !important;
-}
-
+/* === 2️⃣ Slightly dimmed backdrop for dialogs === */
 .MuiBackdrop-root {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  z-index: 1400 !important;
-}
-body.MuiModal-open {
-  overflow: hidden !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Ensure backdrop always covers everything */
-.MuiBackdrop-root {
-  background-color: rgba(0, 0, 0, 0.75) !important;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  z-index: 9998 !important;
-}
-@media print {
-  body * {
-    visibility: hidden !important;
-  }
-  .MuiDialog-root,
-  .MuiDialog-root * {
-    visibility: visible !important;
-  }
-  .MuiDialog-paper {
-    position: absolute !important;
-    left: 0;
-    top: 0;
-    width: 100% !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-  }
+/* === 3️⃣ Ensure dialog content inside normal dialogs is white === */
+.MuiDialogContent-root:not(.logout-dialog .MuiDialogContent-root) {
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
-/* ✅ Print styling */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  .MuiDialog-root,
-  .MuiDialog-root * {
-    visibility: visible;
-  }
-  .MuiDialog-paper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
+/* === 4️⃣ Make sure Snackbar layers are on top === */
+.MuiSnackbar-root {
+  z-index: 9999 !important;
 }
+
+/* === 5️⃣ Force solid white for all Snackbars (MUI Alerts) === */
+.MuiSnackbar-root,
+.MuiSnackbarContent-root,
+.MuiAlert-root {
+  background: #fff !important;
+  color: #000 !important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+
+/* === 6️⃣ React Toastify global overrides === */
+.Toastify__toast-container,
+.Toastify__toast,
+.Toastify__toast-body {
+  background: #fff !important;
+  color: #000 !important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+
+/* === 7️⃣ Toastify progress bar color (brand red) === */
+.Toastify__progress-bar {
+  background: #cc0000 !important;
+}
+
+/* === 8️⃣ Optional: Toastify close button hover fix === */
+.Toastify__close-button:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ✅ Logout dialog stays glassy — handled separately in logout CSS */

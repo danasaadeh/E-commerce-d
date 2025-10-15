@@ -17,6 +17,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { appRoutes } from "../../../../routes";
 import { useSignUpMutation } from "../../services/mutations";
 import { signUpFormSchemaValidation } from "./config";
+import AppSnackbar from "@/shared/components/snack-bar/app-snackbar";
 
 interface SignUpFormData {
   name: string;
@@ -219,22 +220,12 @@ const SignupForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Snackbar */}
-      <Snackbar
+      <AppSnackbar
         open={snackbar.open}
-        autoHideDuration={3000}
+        message={snackbar.message}
+        severity={snackbar.severity}
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      >
-        <Alert
-          onClose={handleCloseSnackbar}
-          severity={snackbar.severity}
-          variant="filled"
-          sx={{ width: "100%" }}
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
+      />
     </div>
   );
 };
